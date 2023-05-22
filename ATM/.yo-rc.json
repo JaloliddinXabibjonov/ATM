@@ -43,6 +43,8 @@
     "clientThemeVariant": "",
     "withAdminUi": true,
     "languages": ["en", "ru", "uz-Cyrl-uz", "uz-Latn-uz"],
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": ["Card", "Bankomat", "Transaction", "Bank", "CurrencyBox", "BanknoteBox"],
+    "lastLiquibaseTimestamp": 1684756001000
   }
 }

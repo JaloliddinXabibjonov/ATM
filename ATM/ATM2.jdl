@@ -1,0 +1,66 @@
+
+entity Card {
+	cardNumber String required minlength(16) maxlength(16) unique
+    cvv Integer required min(3) max(3)
+    lastName String maxlength(50)
+    firstName String maxlength(50)
+    expiryDate Instant required
+    password String maxlength(4) minlength(4) required
+    type Type
+    active Boolean
+}
+
+entity Bank {
+	name String
+}
+
+enum Type {
+	UZCARD,
+    HUMO,
+    VISA
+}
+
+entity Bankomat {
+	type Type required
+    maximumWithdrawalAmount Double required
+    commissionOfOtherBank Double required
+    commissionOfThisBank Double required
+    amountForNotification Long
+    address String
+}
+
+entity Transaction {
+	type TypeOfPractice required
+    amount Long required
+    currency Currency required
+    cardNumber String
+
+}
+entity BanknoteBox {
+	currency Currency required
+    amount Integer required
+    value Integer required
+}
+
+enum Currency {
+	USD,
+    SUM
+}
+
+enum TypeOfPractice {
+	DEBIT, CREDIT
+}
+
+relationship OneToMany {
+	Bankomat{banknoteBoxes} to BanknoteBox
+    Transaction{banknoteBoxes} to BanknoteBox
+}
+
+relationship ManyToOne {
+	Card{bank} to Bank
+    Bankomat{bank} to Bank
+
+}
+
+service all with serviceImpl
+

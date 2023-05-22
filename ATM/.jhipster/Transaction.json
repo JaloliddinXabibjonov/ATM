@@ -1,0 +1,44 @@
+{
+  "name": "Transaction",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "TypeOfPractice",
+      "fieldValues": "DEBIT,CREDIT",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "Currency",
+      "fieldValues": "USD,SUM",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cardNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "banknoteBox",
+      "otherEntityRelationshipName": "transaction",
+      "relationshipName": "banknoteBoxes"
+    }
+  ],
+  "entityTableName": "transaction",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20230522105759"
+}

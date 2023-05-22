@@ -1,0 +1,41 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType session
+    baseName ATM
+    blueprints []
+    buildTool maven
+    cacheProvider no
+    clientFramework no
+    clientPackageManager npm
+    clientTheme none
+    creationTimestamp 1684489553797
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    enableGradleEnterprise false
+    enableHibernateCache false
+    enableSwaggerCodegen false
+    enableTranslation true
+    gradleEnterpriseHost ""
+    jhiPrefix jhi
+    jhipsterVersion "7.4.1"
+    languages [en, ru, uz-Cyrl-uz, uz-Latn-uz]
+    messageBroker false
+    nativeLanguage en
+    otherModules []
+    packageName uz.jaloliddin
+    prodDatabaseType postgresql
+    reactive false
+    rememberMeKey "f90f7c99d2ff808d73dcd80cc2ca90ff35e6ab5a6f721dc36dc933dc4d5ad5caa9611d2762a1bd12a85d1e929113fc39aa2a"
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType no
+    skipClient true
+    skipUserManagement false
+    testFrameworks []
+    websocket false
+    withAdminUi true
+  }
+}
+

@@ -1,0 +1,45 @@
+{
+  "name": "BanknoteBox",
+  "fields": [
+    {
+      "fieldName": "currency",
+      "fieldType": "Currency",
+      "fieldValues": "USD,SUM",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "bankomat",
+      "otherEntityRelationshipName": "banknoteBoxes",
+      "relationshipName": "bankomat"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "transaction",
+      "otherEntityRelationshipName": "banknoteBoxes",
+      "relationshipName": "transaction"
+    }
+  ],
+  "entityTableName": "banknote_box",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20230522114641"
+}

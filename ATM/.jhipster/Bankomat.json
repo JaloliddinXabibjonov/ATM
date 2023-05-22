@@ -1,0 +1,58 @@
+{
+  "name": "Bankomat",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "Type",
+      "fieldValues": "UZCARD,HUMO,VISA",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "maximumWithdrawalAmount",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "commissionOfOtherBank",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "commissionOfThisBank",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "amountForNotification",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "banknoteBox",
+      "otherEntityRelationshipName": "bankomat",
+      "relationshipName": "banknoteBoxes"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "bank",
+      "otherEntityRelationshipName": "bankomat",
+      "relationshipName": "bank"
+    }
+  ],
+  "entityTableName": "bankomat",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20230522105758"
+}

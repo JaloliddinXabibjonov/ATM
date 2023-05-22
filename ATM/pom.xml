@@ -7,7 +7,7 @@
 
     <groupId>uz.jaloliddin</groupId>
     <artifactId>atm</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>ATM</name>
     <description>Description for ATM</description>
@@ -84,6 +84,8 @@
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+        <commitShortSha>${maven.build.timestamp}</commitShortSha>
+        <fileNamePrefix>${project.artifactId}-${project.version}</fileNamePrefix>
         <!-- jhipster-needle-maven-property -->
     </properties>
 
@@ -288,6 +290,7 @@
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
+        <finalName>${fileNamePrefix}-${commitShortSha}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,0 +1,73 @@
+
+entity Card {
+	cardNumber String required min(16) max(16) unique
+    cvv Integer required min(3) max(3)
+    lastName String max(50)
+    firstName String max(50)
+    expiryDate Instant required
+    password String max(4) min(4) required
+    type Type 
+    active Boolean
+}
+
+entity Bank {
+	name String
+}
+
+/** */
+enum Type {
+	UZCARD,
+    HUMO,
+    VISA
+}
+
+entity Bankomat {
+	type Type required
+    maximumWithdrawalAmount Double required
+    commissionOfOtherBank Double required
+    commissionOfThisBank Double required
+    amountForNotification Long 
+    address String
+}
+
+entity Transaction {
+	type TypeOfPractice required
+    amount Long required
+    currency Currency required
+    cardNumber String
+    
+}
+entity CurrencyBox {
+	currency Currency
+    amount Integer
+    value Integer
+}
+
+enum Currency {
+	USD,
+    SUM
+}
+
+enum TypeOfPractice {
+	OUT
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToMany {
+	CurrencyBox to  Bankomat{currencyBoxes}
+    CurrencyBox to Transaction{currencyBoxes}
+}
+
+relationship ManyToOne {
+	Card{bank} to Bank
+    Bankomat{bank} to Bank
+}
+
+paginate JobHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+service all with serviceImpl except Employee, Job
+

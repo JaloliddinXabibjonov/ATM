@@ -1,0 +1,11 @@
+id;card_number;cvv;last_name;first_name;expiry_date;password;type;active
+1;mobile partnersh;3;Howell;Roel;2023-05-22T02:47:56;expl;HUMO;false
+2;GB Spur GuaraniX;3;Tromp;Allen;2023-05-21T22:52:15;Camb;VISA;true
+3;superstructure M;3;Heidenreich;Quincy;2023-05-21T18:56:23;Inte;HUMO;false
+4;cross-platformXX;3;Hickle;Brock;2023-05-21T22:30:15;Qual;HUMO;true
+5;functionalities ;3;O'Keefe;Regan;2023-05-22T04:24:20;inno;HUMO;false
+6;Forward hub mult;3;Sipes;Deja;2023-05-22T02:08:08;Futu;HUMO;true
+7;black HomeXXXXXX;3;Sipes;Abdullah;2023-05-22T01:08:10;Qual;VISA;true
+8;Branding quantif;3;Dooley;Francesca;2023-05-21T13:46:17;Brun;UZCARD;true
+9;OfficerXXXXXXXXX;3;Ledner;Kadin;2023-05-21T21:12:26;inte;UZCARD;false
+10;Oro core synthes;3;Hessel;Kevin;2023-05-22T01:36:07;Pre-;VISA;true
